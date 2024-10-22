@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Roblox Theme Changer",
+  "version": "1.0",
+  "description": "Change your unique roblox theme Alpha Testing",
+  "permissions": [
+    "cookies",
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://*.roblox.com/*", // This allows all pages on roblox.com
+    "https://www.roblox.com/home" //
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.roblox.com/*"],
+      "js": ["content.js", "AnotherContent.js", "Anotherpopup.js"]  // Add AnotherContent.js her
+    }
+  ]
+}
